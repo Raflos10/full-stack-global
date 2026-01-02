@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="/assets/css/tailwind.css">
 </head>
 <body>
-    <header>
+    <header class="bg-white text-gray-900 h-16 px-12 sm:px-20 md:px-32 lg:px-48 xl:px-64 py-4 shadow-sm flex justify-between items-center">
+        <h1 class="m-0"><a href="/" class="text-3xl">{{ site.title | default: "Full Stack Global" }}</a></h1>
+        <a href="/about-me" class="text-lg font-bold">About Me</a>
     </header>
     <main>
         {{ content }}
