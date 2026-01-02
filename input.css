@@ -70,4 +70,27 @@
     font-style: italic;
     line-height: 1.6;
   }
+
+  body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+}
+
+@font-face {
+  font-family: 'neuropolregular';
+  src: url('/assets/fonts/neuropol-webfont.woff2') format('woff2'),
+    url('/assets/fonts/neuropol-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@keyframes title-anim {
+  0%, 60% {
+    transform: rotate(50deg) scalex(4) scaley(.5) translateX(50%)
+  }
+
+  100% {
+    transform: rotate(0deg) scalex(1)
+  }
 }
