@@ -1,0 +1,33 @@
+<aside id="secondary" class="widget-area sidebar flex-1 p-6 ml-8">
+	<section id="recent-posts-2" class="widget widget_recent_entries mb-8">
+		<div class="widget-title-style pb-2 mb-4">
+			<h4 class="widget-title text-xl font-bold text-gray-800">Recent Posts</h4>
+		</div>
+		<ul class="space-y-2">
+			{% for post in site.posts limit:5 %}
+			<li><a href="{{ post.url }}" class="block text-blue-600 hover:text-orange-600 transition-colors duration-200 py-1 px-2 rounded hover:bg-gray-50">{{ post.title }}</a></li>
+			{% endfor %}
+		</ul>
+	</section>
+	<section id="archives-2" class="widget widget_archive mb-8">
+		<div class="widget-title-style pb-2 mb-4">
+			<h4 class="widget-title text-xl font-bold text-gray-800">Archives</h4>
+		</div>
+		<ul class="space-y-2">
+			{% assign posts_by_year = site.posts | group_by_exp:"post", "post.date | date: '%Y'" %}
+			{% for year_group in posts_by_year %}
+			<li><a href="/{{ year_group.name }}/" class="block text-blue-600 hover:text-orange-600 transition-colors duration-200 py-1 px-2 rounded hover:bg-gray-50">{{ year_group.name }}</a></li>
+			{% endfor %}
+		</ul>
+	</section>
+	<section id="categories-2" class="widget widget_categories">
+		<div class="widget-title-style pb-2 mb-4">
+			<h4 class="widget-title text-xl font-bold text-gray-800">Categories</h4>
+		</div>
+		<ul class="space-y-2">
+			{% for category in site.categories %}
+			<li class="cat-item"><a href="{{ category.url }}" class="block text-blue-600 hover:text-orange-600 transition-colors duration-200 py-1 px-2 rounded hover:bg-gray-50">{{ category.name }}</a></li>
+			{% endfor %}
+		</ul>
+	</section>
+</aside>

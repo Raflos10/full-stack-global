@@ -1,0 +1,39 @@
+---
+layout: default
+---
+
+<main class="flex flex-col lg:flex-row gap-8 mx-4 sm:mx-8 md:mx-16 lg:mx-32 my-16">
+	<article class="flex-1 bg-white py-10 shadow-lg">
+		<div class="px-4 sm:px-8 pb-6 border-b border-gray-200">
+			<h1 class="text-2xl sm:text-4xl font-bold mb-4">{{ page.title }}</h1>
+			<div class="post-meta flex gap-4 mb-4">
+				{% if page.date %}
+				<a href="/{{ page.date | date: '%Y' }}/" class="flex items-center gap-1 text-sm">
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+						stroke="currentColor" width="14" height="14" aria-hidden="true">
+						<path stroke-linecap="round" stroke-linejoin="round"
+							d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+					</svg>
+					{{ page.date | date: "%B %d, %Y" }}
+				</a>
+				{% endif %}
+				{% if page.author %}
+				<a href="/authors/{{ page.author }}/" class="flex items-center gap-1 text-sm">
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+						stroke="currentColor" width="14" height="14" aria-hidden="true">
+						<path stroke-linecap="round" stroke-linejoin="round"
+							d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+					</svg>
+					{{ page.author }}
+				</a>
+				{% endif %}
+			</div>
+		</div>
+		<div class="px-4 sm:px-8 py-4">
+			{{ content }}
+		</div>
+	</article>
+	<aside class="flex-1 lg:flex-[0_0_30%]">
+		{% include sidebar.html %}
+	</aside>
+</main>

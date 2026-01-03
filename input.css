@@ -25,40 +25,46 @@
     line-height: 1.2;
   }
 
-  h2 {
-    font-size: var(--font-size-4xl);
-    font-weight: 700;
-    line-height: 1.3;
-  }
+   h2 {
+     font-size: var(--font-size-4xl);
+     font-weight: 700;
+     line-height: 1.3;
+     margin-bottom: 1.5rem;
+   }
 
-  h3 {
-    font-size: var(--font-size-3xl);
-    font-weight: 600;
-    line-height: 1.4;
-  }
+   h3 {
+     font-size: var(--font-size-3xl);
+     font-weight: 600;
+     line-height: 1.4;
+     margin-bottom: 1.5rem;
+   }
 
-  h4 {
-    font-size: var(--font-size-2xl);
-    font-weight: 600;
-    line-height: 1.4;
-  }
+   h4 {
+     font-size: var(--font-size-2xl);
+     font-weight: 600;
+     line-height: 1.4;
+     margin-bottom: 1.5rem;
+   }
 
-  h5 {
-    font-size: var(--font-size-xl);
-    font-weight: 500;
-    line-height: 1.5;
-  }
+   h5 {
+     font-size: var(--font-size-xl);
+     font-weight: 500;
+     line-height: 1.5;
+     margin-bottom: 1.5rem;
+   }
 
-  h6 {
-    font-size: var(--font-size-lg);
-    font-weight: 500;
-    line-height: 1.5;
-  }
+   h6 {
+     font-size: var(--font-size-lg);
+     font-weight: 500;
+     line-height: 1.5;
+     margin-bottom: 1.5rem;
+   }
 
-  p {
-    font-size: var(--font-size-base);
-    line-height: 1.6;
-  }
+   p {
+     font-size: var(--font-size-base);
+     line-height: 1.6;
+     margin-bottom: 1.5rem;
+   }
 
   small {
     font-size: var(--font-size-sm);
@@ -90,6 +96,10 @@
   100% {
     transform: rotate(0deg) scalex(1)
   }
+}
+
+.title-font {
+  font-family: 'arial black', -apple-system, 'BlinkMacSystemFont', 'segoe ui', 'Helvetica', 'Arial', sans-serif, 'apple color emoji', 'segoe ui emoji', 'segoe ui symbol';
 }
 
 /* Profound stylings integrated from theme CSS */
@@ -162,13 +172,33 @@ input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="co
 
 /* Links */
 a {
-  color: black;
+  color: #3b82f6;
   text-decoration: none;
   transition: all 0.3s ease-in-out;
 }
 
 a:hover, a:focus, a:active {
   color: #FF9800;
+}
+
+header a {
+  color: black;
+}
+
+#content a {
+  color: black;
+}
+
+#content a:hover, #content a:focus, #content a:active {
+  color: #FF9800;
+}
+
+.sidebar a {
+  color: #2563eb;
+}
+
+.sidebar a:hover, .sidebar a:focus, .sidebar a:active {
+  color: #ea580c;
 }
 
 /* Header */
@@ -196,6 +226,12 @@ a:hover, a:focus, a:active {
   background: #fff;
   padding: 30px 40px;
   box-shadow: 0 2px 4px rgba(0,0,0,.08);
+}
+
+article ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 article.teaser {

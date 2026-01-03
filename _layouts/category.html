@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+<main class="flex flex-col lg:flex-row gap-8 mx-4 sm:mx-8 md:mx-16 lg:mx-32 my-16">
+	<article class="flex-1 bg-white px-4 sm:px-8 py-10 shadow-lg">
+		<h1 class="text-2xl sm:text-4xl font-bold mb-4">{{ page.name }}</h1>
+		{{ content }}
+
+		<h2 class="text-xl sm:text-2xl font-semibold mb-4">Posts</h2>
+		<ul class="list-disc list-inside space-y-2">
+			{% assign filtered_posts = site.posts | where_exp: "post", "post.categories contains page.short_name" %}
+			{% for post in filtered_posts %}
+			<li><a href="{{ post.url }}" class="text-blue-600 hover:text-blue-800">{{ post.title }}</a></li>
+			{% endfor %}
+		</ul>
+	</article>
+	<aside class="flex-1 lg:flex-[0_0_30%]">
+		{% include sidebar.html %}
+	</aside>
+</main>

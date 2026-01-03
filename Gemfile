@@ -1,3 +1,10 @@
+# frozen_string_literal: true
+
 source "https://rubygems.org"
 
-gem "jekyll", "~> 4.4.1"
+gem "jekyll"
+
+group :jekyll_plugins do
+  gem 'jekyll-sitemap'
+  gem 'jekyll-archives'
+end

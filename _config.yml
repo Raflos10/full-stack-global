@@ -1,3 +1,30 @@
-title: Full Stack Global
-description: >-
-  Full stack global
+collections:
+  categories:
+    output: true
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-archives
+
+jekyll-archives:
+  enabled: [year]
+  layouts:
+    year: archive
+  permalinks:
+    year: '/:year/'
+
+defaults:
+  - scope:
+      path: ""
+      type: "categories"
+    values:
+      layout: "category"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
